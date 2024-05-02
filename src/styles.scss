@@ -1,0 +1,29 @@
+@use "@carbon/styles";
+
+.main_heading .cds--header__name--prefix {
+  font-weight: bolder;
+}
+
+.cus_btn {
+  font-size: 16px;
+  line-height: normal;
+  color: #fff;
+  background: #ff9500;
+  width: 100%;
+  max-width: 580px;
+  text-align: center;
+  justify-content: center;
+}
+.cus_btn:hover {
+  background: #ff6200;
+}
+
+.mb-3 {
+  margin-bottom: 1rem !important;
+}
+.mb-1 {
+  margin-bottom: 0.5rem !important;
+}
+.mt-3 {
+  margin-top: 1rem !important;
+}

@@ -1,0 +1,21 @@
+<div>
+  <cds-header brand="Axeos" class="main_heading">
+    <cds-header-navigation>
+      <cds-header-item
+        [isCurrentPage]="checkCurrentPath('switch')"
+        [route]="['/switch']"
+        >Switches</cds-header-item
+      >
+      <cds-header-item
+        [isCurrentPage]="checkCurrentPath('stream')"
+        [route]="['/stream']"
+        >Stream Events</cds-header-item
+      >
+    </cds-header-navigation>
+    <cds-header-item
+      style="margin-left: 70%; font-weight: bolder"
+      (click)="auth.logout()"
+      ><b class="bolder">Logout</b></cds-header-item
+    >
+  </cds-header>
+</div>

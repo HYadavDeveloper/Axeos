@@ -1,0 +1,24 @@
+<div style="margin-top: 50px">
+  <cds-structured-list [condensed]="false" [selection]="false">
+    <cds-list-header>
+      <cds-list-column>Name</cds-list-column>
+      <cds-list-column>Value</cds-list-column>
+      <cds-list-column>Details</cds-list-column>
+    </cds-list-header>
+    <cds-list-row value="row1" *ngFor="let idata of data; let i = index">
+      <cds-list-column>{{ idata.name }}</cds-list-column>
+      <cds-toggle
+        [(ngModel)]="idata.value"
+        (checkedChange)="openModel(i, idata)"
+        [disabled]="!idata.can_toggle"
+        >Toggle</cds-toggle
+      >
+      <cds-list-column *ngIf="this.description">
+        {{ "Name:" + this.description[i].name }}<br />
+        {{ "Value:" + this.description[i].value }}<br />
+        {{ "UUID:" + this.description[i].uuid }}<br />
+        {{ "Can Toggle:" + this.description[i].can_toggle }}
+      </cds-list-column>
+    </cds-list-row>
+  </cds-structured-list>
+</div>

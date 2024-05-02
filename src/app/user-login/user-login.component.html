@@ -1,0 +1,33 @@
+<div class="login_screen">
+  <div>
+    <cds-header brand=""
+      ><img
+        src="https://axeos.com/wp-content/uploads/2019/01/axeos-logo-sticky.svg"
+      />
+    </cds-header>
+  </div>
+  <div cdsGrid [fullWidth]="true" class="login_box">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <cds-text-label class="mb-3">
+        <label>Username</label>
+        <input cdsText type="text" size="lg" formControlName="username" />
+      </cds-text-label>
+      <span style="color: red" *ngIf="usernameError" class="mb-1">{{
+        usernameError
+      }}</span>
+      <cds-text-label class="mb-3">
+        <label>Password</label>
+        <input cdsText type="password" size="lg" formControlName="password" />
+      </cds-text-label>
+      <span style="color: red" *ngIf="PasswordError" class="mb-1">{{
+        PasswordError
+      }}</span>
+      <button type="submit" cdsButton="primary" size="lg" class="cus_btn mt-3">
+        Log in
+      </button>
+    </form>
+    <span style="color: red; padding-top: 10px" *ngIf="error" class="mb-1"
+      >Please check login credentials</span
+    >
+  </div>
+</div>

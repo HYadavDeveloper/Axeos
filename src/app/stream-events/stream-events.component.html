@@ -1,0 +1,32 @@
+<div style="margin-top: 50px">
+  <cds-structured-list
+    [condensed]="false"
+    [selection]="false"
+    [(ngModel)]="data"
+  >
+    <cds-list-header>
+      <cds-list-column>Event Type</cds-list-column>
+      <cds-list-column>Phone UUID</cds-list-column>
+      <cds-list-column>Status Code</cds-list-column>
+      <cds-list-column>Status</cds-list-column>
+      <cds-list-column>Timestamp</cds-list-column>
+      <cds-list-column>Sequence</cds-list-column>
+    </cds-list-header>
+    <cds-list-row value="row1" *ngFor="let idata of data; let i = index">
+      <cds-list-column>{{
+        idata.event_type ? idata.event_type : "-"
+      }}</cds-list-column>
+      <cds-list-column>{{
+        idata.phone_uuid ? idata.phone_uuid : "-"
+      }}</cds-list-column>
+      <cds-list-column>{{
+        idata.status_code ? idata.status_code : "-"
+      }}</cds-list-column>
+      <cds-list-column>{{ idata.status ? idata.status : "-" }}</cds-list-column>
+      <cds-list-column>{{
+        idata.timestamp ? convertTime(idata.timestamp) : "-"
+      }}</cds-list-column>
+      <cds-list-column>{{ idata.seq ? idata.seq : "-" }}</cds-list-column>
+    </cds-list-row>
+  </cds-structured-list>
+</div>
